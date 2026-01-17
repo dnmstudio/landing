@@ -34,9 +34,9 @@
   --section-padding-y: 8rem;
   --section-padding-x: 5vw;
 
-  /* Typography - Using Next.js font variables */
-  --font-mono: var(--font-jetbrains), 'JetBrains Mono', monospace;
-  --font-sans: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Typography - will be overridden by Next.js font variables on body */
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Letter Spacing */
   --tracking-tight: -0.02em;
@@ -58,8 +58,6 @@
   --color-text-muted: var(--color-text-muted);
   --color-accent: var(--color-accent);
   --color-accent-hover: var(--color-accent-hover);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
 }
 
 /* ============================================
@@ -79,11 +77,15 @@ html {
 body {
   background-color: var(--color-background);
   color: var(--color-text-primary);
-  font-family: var(--font-sans);
+  font-family: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Override root font variables with Next.js loaded fonts */
+  --font-mono: var(--font-jetbrains), 'JetBrains Mono', monospace;
+  --font-sans: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* ============================================

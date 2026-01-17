@@ -1,65 +1,140 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main>
+      {/* Hero Section - Background */}
+      <section className="section section-bg min-h-screen flex flex-col justify-center">
+        <span className="section-label">DNM Studio</span>
+        <h1 className="hero-title mb-4">Where systems flow</h1>
+        <p className="body-large max-w-2xl mb-8">
+          Automatizaciones inteligentes y sistemas digitales que escalan con tu
+          negocio.
+        </p>
+        <div className="flex gap-4 flex-wrap">
+          <button className="btn btn-fill">Agenda consulta gratuita</button>
+          <button className="btn btn-outline">Ver servicios</button>
+        </div>
+      </section>
+
+      {/* About Section - Surface */}
+      <section className="section section-surface">
+        <span className="section-label">Sobre Nosotros</span>
+        <h2 className="mb-6">Construimos sistemas que funcionan y escalan</h2>
+        <p className="max-w-3xl mb-4">
+          En DNM Studio ayudamos a empresas costarricenses y emprendedores a
+          transformar procesos manuales en soluciones digitales eficientes y
+          automatizadas.
+        </p>
+        <p className="max-w-3xl">
+          Entendemos tu negocio antes de escribir codigo, trabajamos con
+          tecnologias modernas y disenamos soluciones listas para produccion
+          real.
+        </p>
+      </section>
+
+      {/* Services Preview - Background */}
+      <section className="section section-bg">
+        <span className="section-label">Servicios</span>
+        <h2 className="mb-8">Lo que hacemos</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="card">
+            <h3 className="mb-2">Automatizaciones inteligentes</h3>
+            <p>
+              Menos tareas manuales. Mas foco en lo importante.
+            </p>
+          </div>
+          <div className="card">
+            <h3 className="mb-2">Soluciones digitales a la medida</h3>
+            <p>
+              Software disenado para tu negocio, no al reves.
+            </p>
+          </div>
+          <div className="card">
+            <h3 className="mb-2">Servicios en la nube</h3>
+            <p>
+              Tu producto, listo para produccion y crecimiento.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Preview - Surface */}
+      <section className="section section-surface">
+        <span className="section-label">Proceso</span>
+        <h2 className="mb-8">Un enfoque claro y practico</h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {["Entendemos", "Disenamos", "Construimos", "Desplegamos"].map(
+            (step, i) => (
+              <div key={step}>
+                <span className="text-accent hero-title opacity-30">
+                  {i + 1}
+                </span>
+                <h3 className="mt-2 mb-2">{step}</h3>
+                <p className="text-sm">
+                  Descripcion del paso {i + 1} del proceso.
+                </p>
+              </div>
+            )
+          )}
+        </div>
+      </section>
+
+      {/* Contact Preview - Background */}
+      <section className="section section-bg text-center">
+        <span className="section-label">Contacto</span>
+        <h2 className="mb-4">Listo para automatizar y escalar?</h2>
+        <p className="max-w-2xl mx-auto mb-8">
+          Agenda una consulta gratuita de 30 minutos y analicemos juntos como
+          optimizar tus procesos.
+        </p>
+        <div className="flex gap-4 justify-center flex-wrap">
+          <button className="btn btn-fill">Agendar consulta</button>
+          <button className="btn btn-outline">WhatsApp</button>
+        </div>
+      </section>
+
+      {/* Footer - Surface */}
+      <footer className="section section-surface border-t border-[var(--border-subtle)]">
+        <div className="flex flex-col md:flex-row justify-between gap-8">
+          <div>
+            <h3 className="text-accent mb-2">DNM Studio</h3>
+            <p className="micro text-secondary">Where systems flow</p>
+          </div>
+          <div className="flex gap-16 flex-wrap">
+            <div>
+              <h4 className="micro text-primary mb-4">Servicios</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#" className="text-secondary hover:text-accent">
+                    Automatizaciones
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-secondary hover:text-accent">
+                    Desarrollo
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-secondary hover:text-accent">
+                    Cloud
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="micro text-primary mb-4">Contacto</h4>
+              <ul className="space-y-2">
+                <li className="text-secondary">hola@dnmstudio.io</li>
+                <li className="text-secondary">Costa Rica</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="mt-8 pt-8 border-t border-[var(--border-subtle)]">
+          <p className="micro text-muted">
+            2025 DNM Studio. Todos los derechos reservados.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </footer>
+    </main>
   );
 }

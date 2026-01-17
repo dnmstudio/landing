@@ -1,3 +1,4 @@
+import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import SobreNosotros from "@/components/sections/SobreNosotros";
 import Servicios from "@/components/sections/Servicios";
@@ -7,13 +8,16 @@ import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <SobreNosotros />
-      <Servicios />
-      <ComoTrabajamos />
-      <Contacto />
-      <Footer />
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <SobreNosotros />
+        <Servicios />
+        <ComoTrabajamos />
+        <Contacto />
+        <Footer />
+      </main>
+    </>
   );
 }

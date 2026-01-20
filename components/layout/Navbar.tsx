@@ -13,7 +13,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border-subtle)]" style={{
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-(--border-subtle)" style={{
       backgroundColor: "rgba(13, 13, 13, 0.85)",
       backdropFilter: "blur(10px)",
     }}>
@@ -41,7 +41,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle - Hidden on desktop */}
         <button
-          className="btn btn-outline p-3 lg:!hidden"
+          className="btn btn-outline p-3 lg:hidden!"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -72,7 +72,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden border-t border-[var(--border-subtle)] bg-[var(--color-surface)]">
+        <div className="lg:hidden border-t border-(--border-subtle) bg(--color-surface)">
           <div className="flex flex-col gap-4 p-6">
             {navLinks.map((link) => (
               <a

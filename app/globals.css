@@ -129,6 +129,12 @@ a:hover {
   color: var(--color-accent);
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
 /* ============================================
    Utility Classes
    ============================================ */
@@ -225,6 +231,7 @@ a:hover {
   border-radius: 0;
   cursor: pointer;
   transition: all var(--transition-fast);
+  min-height: 44px;
 }
 
 .btn-outline {
@@ -246,8 +253,22 @@ a:hover {
 }
 
 .btn-fill:hover {
+  color: white;
   background-color: var(--color-accent-hover);
   border-color: var(--color-accent-hover);
+}
+
+/* Button Sizes */
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.7rem;
+  min-height: 36px;
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 0.875rem;
+  min-height: 52px;
 }
 
 /* ============================================
@@ -285,6 +306,64 @@ a:hover {
 }
 
 /* ============================================
+   Collapsible Content Styles
+   ============================================ */
+
+.collapse-content {
+  overflow: hidden;
+  transition: max-height var(--transition-normal);
+}
+
+.collapse-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  cursor: pointer;
+  margin-top: var(--space-sm);
+}
+
+/* ============================================
+   Stat Card Styles
+   ============================================ */
+
+.stat-card {
+  background-color: var(--color-accent);
+  padding: var(--space-lg) var(--space-xl);
+  text-align: center;
+  min-width: 140px;
+}
+
+.stat-value {
+  font-family: var(--font-mono);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-background);
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--color-background);
+  opacity: 0.8;
+  margin-top: var(--space-xs);
+}
+
+/* ============================================
+   Horizontal Scroll Styles
+   ============================================ */
+
+.stats-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.stats-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ============================================
    Card Styles
    ============================================ */
 
@@ -296,6 +375,21 @@ a:hover {
 
 .card:hover {
   border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Active/Tap States */
+.btn:active {
+  transform: scale(0.98);
+}
+
+.card:active {
+  transform: translateY(0);
+}
+
+a:active {
+  opacity: 0.8;
 }
 
 /* ============================================
@@ -306,6 +400,11 @@ a:hover {
   :root {
     --section-padding-y: 4rem;
     --section-padding-x: 1.5rem;
+  }
+
+  .btn {
+    min-height: 48px;
+    padding: 0.75rem 1.5rem;
   }
 }
 

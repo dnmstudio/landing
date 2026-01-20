@@ -6,7 +6,7 @@ interface ServiceCardProps {
   tagline: string;
   description?: string;
   sections?: {
-    label: string;
+    title: string;
     items: string[];
   }[];
   className?: string;
@@ -39,8 +39,8 @@ export default function ServiceCard({
       {/* Sections (HERRAMIENTAS, QUÉ RESOLVEMOS, etc.) */}
       {sections &&
         sections.map((section) => (
-          <div key={section.label} className="mb-6 last:mb-0">
-            <h4 className="micro text-primary mb-3">{section.label}</h4>
+          <div key={section.title} className="mb-6 last:mb-0">
+            <h4 className="micro text-primary mb-3">{section.title}</h4>
             <ul className="space-y-2">
               {section.items.map((item) => (
                 <li key={item} className="text-secondary text-sm flex gap-2">

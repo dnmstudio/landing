@@ -10,11 +10,11 @@ export default function Contacto() {
         Agenda una consulta gratuita de 30 minutos y analicemos juntos cómo
         optimizar tus procesos y hacer crecer tu negocio.
       </p>
-      <div className="flex gap-4 justify-center flex-wrap">
-        <Button variant="fill" href="#contacto">
+      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <Button variant="fill" href="#contacto" className="w-full sm:w-auto">
           Agendar consulta gratuita
         </Button>
-        <Button variant="outline" href="#contacto">
+        <Button variant="outline" href="#contacto" className="w-full sm:w-auto">
           Contáctanos por WhatsApp
         </Button>
       </div>

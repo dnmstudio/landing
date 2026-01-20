@@ -12,11 +12,11 @@ export default function Hero() {
         Automatizaciones inteligentes y sistemas digitales que escalan con tu
         negocio.
       </p>
-      <div className="flex gap-4 flex-wrap">
-        <Button variant="fill" href="#contacto">
+      <div className="flex flex-col sm:flex-row gap-4">
+        <Button variant="fill" href="#contacto" className="w-full sm:w-auto">
           Agenda una consulta gratuita
         </Button>
-        <Button variant="outline" href="#servicios">
+        <Button variant="outline" href="#servicios" className="w-full sm:w-auto">
           Ver servicios
         </Button>
       </div>

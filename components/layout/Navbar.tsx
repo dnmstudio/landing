@@ -34,7 +34,7 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <Button variant="fill" href="#contacto">
+          <Button variant="fill" size="lg" href="#contacto">
             Agenda consulta
           </Button>
         </div>

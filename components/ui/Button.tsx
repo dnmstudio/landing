@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 interface ButtonProps {
   children: ReactNode;
   variant?: "fill" | "outline";
+  size?: "sm" | "md" | "lg";
   href?: string;
   onClick?: () => void;
   icon?: ReactNode;
@@ -12,6 +13,7 @@ interface ButtonProps {
 export default function Button({
   children,
   variant = "outline",
+  size = "md",
   href,
   onClick,
   icon,
@@ -19,7 +21,8 @@ export default function Button({
 }: ButtonProps) {
   const baseClass = "btn";
   const variantClass = variant === "fill" ? "btn-fill" : "btn-outline";
-  const classes = `${baseClass} ${variantClass} ${className}`;
+  const sizeClass = size === "sm" ? "btn-sm" : size === "lg" ? "btn-lg" : "";
+  const classes = `${baseClass} ${variantClass} ${sizeClass} ${className}`;
 
   if (href) {
     return (

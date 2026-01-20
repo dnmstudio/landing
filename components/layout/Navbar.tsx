@@ -41,13 +41,13 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle - Hidden on desktop */}
         <button
-          className="btn btn-outline p-3 lg:hidden!"
+          className="btn btn-outline p-4 lg:hidden!"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
           <svg
-            width="20"
-            height="20"
+            width="24"
+            height="24"
             viewBox="0 0 20 20"
             fill="none"
             stroke="currentColor"
@@ -78,15 +78,17 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="link-brutal text-base"
+                className="link-brutal text-base py-4 block w-full"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
               </a>
             ))}
-            <Button variant="fill" href="#contacto" className="w-full">
-              Agenda consulta
-            </Button>
+            <div className="pt-4">
+              <Button variant="fill" href="#contacto" className="w-full">
+                Agenda consulta
+              </Button>
+            </div>
           </div>
         </div>
       )}
